@@ -4,6 +4,11 @@ var fs = require('fs');
 var owner = process.argv[2];
 var repo = process.argv[3];
 
-function getAvatars () {
+function getRepoContributors (repoOwner, repoName, cb) {
 
 }
+
+getRepoContributors("jquery", "jquery", function(err, results) {
+  console.log("Errors:", err);
+  console.log("Results:", result);
+});
