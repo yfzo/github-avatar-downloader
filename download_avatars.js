@@ -35,12 +35,12 @@ function downloadImageByURL(url, filePath) {
          .pipe(fs.createWriteStream(filePath));
 }
 
-downloadImageByURL("https://avatars2.githubusercontent.com/u/2741?v=3&s=466", "avatars/kvirani.jpg");
+//downloadImageByURL("https://avatars2.githubusercontent.com/u/2741?v=3&s=466", "avatars/kvirani.jpg");
 
-// getRepoContributors("jquery", "jquery", function(err, result) {
-//   console.log("Errors:", err);
+getRepoContributors("jquery", "jquery", function(err, result) {
+  console.log("Errors:", err);
 
-//   for (contributor of result) {
-//    console.log("Avatar url:", contributor.avatar_url);
-//   }
-// });
+  for (contributor of result) {
+    downloadImageByURL(contributor.avatar_url, 'avatars/' + contributor.login + '.png');
+  }
+});
